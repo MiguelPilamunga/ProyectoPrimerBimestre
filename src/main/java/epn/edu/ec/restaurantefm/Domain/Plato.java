@@ -1,7 +1,6 @@
 package epn.edu.ec.restaurantefm.Domain;
 
 import lombok.*;
-
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
@@ -19,12 +18,12 @@ public class Plato {
     private Long id;
 
     @Column(name = "nombre", unique = true)
-    @NotEmpty(message = "{NotEmpty.Plato.nombre}")
+    @NotEmpty(message = "Ingresa el nombre del plato")
     @Size(min = 3, max = 50, message = "El nombre debe tener entre 3 y 50 caracteres")
     private String nombre;
 
     @Column(name = "descripcion")
-    @NotEmpty(message = "{NotEmpty.Plato.descripcion}")
+    @NotEmpty(message = "Ingresa la descripción del plato")
     private String descripcion;
 
     @Column(name = "precio")

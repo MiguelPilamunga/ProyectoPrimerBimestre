@@ -3,7 +3,11 @@
     <h5 class="card-title" th:text="${plato.nombre}">Nombre del plato</h5>
     <p class="card-text">Precio: <span th:text="${plato.precio}">0.00</span></p>
     <p class="card-text" th:text="${plato.descripcion}">Descripción del plato</p>
-    <a th:href="@{/detalle/{id}(id=${plato.id})}" class="btn btn-dark btn-block">
+    <span th:each="i : ${#numbers.sequence(1, 5)}"
+          th:class="${i &lt;= plato.puntuacion} ? 'material-icons star' : 'material-icons star-gray'">
+                        star
+    </span>
+    <a th:href="@{/detallePlato/{id}(id=${plato.id})}" class="btn btn-dark btn-block">
       Ver detalle
     </a>
   </div>

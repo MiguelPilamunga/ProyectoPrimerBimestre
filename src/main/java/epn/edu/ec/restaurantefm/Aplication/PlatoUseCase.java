@@ -1,5 +1,6 @@
 package epn.edu.ec.restaurantefm.Aplication;
 
+import epn.edu.ec.restaurantefm.Domain.Cliente;
 import epn.edu.ec.restaurantefm.Domain.Plato;
 import epn.edu.ec.restaurantefm.infrastructure.InputPort.PlatosInputPort;
 import epn.edu.ec.restaurantefm.infrastructure.OutputPort.PlatosJPARepository;
@@ -12,6 +13,11 @@ import java.util.ArrayList;
 public class PlatoUseCase implements PlatosInputPort {
     @Autowired
     PlatosJPARepository platosJPARepository;
+
+    @Override
+    public ArrayList<Plato> buscarTopPlatos(){
+        return platosJPARepository.buscarPlatosTop();
+    }
     @Override
     public Plato agregarPlato(Plato plato) {
         return platosJPARepository.save(plato);

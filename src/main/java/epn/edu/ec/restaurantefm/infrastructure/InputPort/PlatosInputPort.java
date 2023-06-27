@@ -1,10 +1,13 @@
 package epn.edu.ec.restaurantefm.infrastructure.InputPort;
 
+import epn.edu.ec.restaurantefm.Domain.Cliente;
 import epn.edu.ec.restaurantefm.Domain.Plato;
 
 import java.util.ArrayList;
 
 public interface PlatosInputPort {
+    ArrayList<Plato> buscarTopPlatos();
+
     Plato agregarPlato(Plato plato);
 
     Plato buscarPlatoPorId(Long id);

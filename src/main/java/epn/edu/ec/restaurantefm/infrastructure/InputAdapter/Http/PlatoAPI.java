@@ -20,17 +20,6 @@ public class PlatoAPI {
     @Autowired
     PlatosInputPort platosInputPort;
 
-    @GetMapping("/")
-    public String inicio(Model model) {
-        try {
-            model.addAttribute("platos", platosInputPort.obtenerPlatos());
-            return "inicio";
-        } catch (Exception e) {
-            model.addAttribute("error", e.getMessage());
-            return "error";
-        }
-    }
-
     @GetMapping("/platos")
     public String getallplatos(Model model){
         try {
@@ -42,7 +31,7 @@ public class PlatoAPI {
         }
     }
 
-    @GetMapping("/detalle/{id}")
+    @GetMapping("/detallePlato/{id}")
     public String detallePlato(Model model, @PathVariable("id") long id) {
         try {
             Plato plato = (Plato) platosInputPort.buscarPlatoPorId(id);
@@ -63,10 +52,8 @@ public class PlatoAPI {
                 plato.setId(0L);
                 plato.setPuntuacion(0);
                 model.addAttribute("plato",plato);
-                System.out.println("form a nuevo plato");
             }else{
                 model.addAttribute("plato",platosInputPort.buscarPlatoPorId(id));
-                System.out.println("form actualizar");
 
             }
             return "plato/formulario";
