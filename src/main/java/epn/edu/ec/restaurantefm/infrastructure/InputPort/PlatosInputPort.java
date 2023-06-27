@@ -18,4 +18,6 @@ public interface PlatosInputPort {
     void eliminarPlato(Long id);
 
     ArrayList<Plato> obtenerPlatos();
+
+    Plato actualizarPlato(Plato plato);
 }

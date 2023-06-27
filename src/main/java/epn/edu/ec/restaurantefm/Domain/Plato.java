@@ -3,9 +3,7 @@ package epn.edu.ec.restaurantefm.Domain;
 import lombok.*;
 
 import javax.persistence.*;
-import javax.validation.constraints.DecimalMin;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 
 @Builder
 @Getter
@@ -36,4 +34,9 @@ public class Plato {
     @Column(name = "resena")
     @Size(max = 1000, message = "La reseña debe tener como máximo 1000 caracteres")
     private String resena;
+
+    @Column(name = "puntuacion")
+    @Min(value = 0, message = "La puntuación mínima permitida es 0")
+    @Max(value = 5, message = "La puntuación máxima permitida es 5")
+    private int puntuacion;
 }

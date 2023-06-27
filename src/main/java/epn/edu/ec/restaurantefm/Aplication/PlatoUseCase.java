@@ -39,11 +39,16 @@ public class PlatoUseCase implements PlatosInputPort {
 
     @Override
     public void eliminarPlato(Long id) {
-
+        platosJPARepository.deleteById(id);
     }
 
     @Override
     public ArrayList<Plato> obtenerPlatos(){
         return (ArrayList<Plato>) platosJPARepository.findAll();
+    }
+
+    @Override
+    public Plato actualizarPlato(Plato plato){
+        return platosJPARepository.save(plato);
     }
 }
