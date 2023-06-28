@@ -18,14 +18,11 @@ class PlatoUseCaseTest {
     PlatosJPARepository platosJPARepository;
     private PlatosJPARepository platosJPARepository1;
 
-    @Test
-    void buscarTopPlatos() {
-        assertTrue(!platosJPARepository.findAll().isEmpty());
-    }
+
 
     @Test
-    void agregarPlato() {
-
+    void givenPlatoData_whenAgregarPlato_thenPlatoAdded() {
+        platosJPARepository.deleteAll();
         Plato platoActual = Plato.builder()
                 .nombre("Spaghetti Bolognese")
                 .descripcion("Deliciosos espaguetis con salsa de carne y tomate")
@@ -39,7 +36,7 @@ class PlatoUseCaseTest {
     }
 
     @Test
-    void GuardarPlatos() {
+    void givenPlatosList_whenGuardarPlatos_thenPlatosSaved() {
         platosJPARepository.deleteAll();
         Plato plato1 = Plato.builder()
                 .nombre("Spaghetti Bolognese")
@@ -72,5 +69,9 @@ class PlatoUseCaseTest {
 
         assertEquals(listaPlatosActual, platosJPARepository.saveAll(listaPlatosActual), "Platos Guardados");
 
+    }
+    @Test
+    void givenTopPlatosList_whenBuscarTopPlatos_thenTopPlatosReturned() {
+        assertTrue(!platosJPARepository.findAll().isEmpty());
     }
 }

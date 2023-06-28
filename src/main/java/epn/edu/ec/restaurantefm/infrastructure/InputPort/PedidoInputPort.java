@@ -8,5 +8,6 @@ import java.util.ArrayList;
 public interface PedidoInputPort {
     Pedido hacerPedido(Pedido pedido);
 
-    Pedido obtenerPedidos(Cliente cliente);
+
+    ArrayList<Pedido> buscarPedido(Long id);
 }

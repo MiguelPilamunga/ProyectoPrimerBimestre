@@ -8,7 +8,8 @@ import java.util.ArrayList;
 
 public interface PedidosInputPort {
 
-    Pedidos guardarPedidos(Pedidos pedidos);
+    Pedidos guardarPedidos(Cliente cliente,ArrayList<Pedido> pedidos);
 
-    ArrayList<Pedido> obtenerPedidos(Cliente cliente);
+
+    Pedidos obtenerPedidosdelCliente(Long id);
 }

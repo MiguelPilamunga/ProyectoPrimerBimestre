@@ -13,5 +13,9 @@ public class PedidosAPI {
         return "index";
     }
 
+    public String obtenerPedidos(){
+        return " ";
+    }
+
 
 }

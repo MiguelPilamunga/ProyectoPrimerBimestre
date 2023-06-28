@@ -16,13 +16,17 @@ public class PedidosUseCase implements PedidosInputPort {
     @Autowired
     PedidosJPARepository pedidosJPARepository;
 
+
     @Override
-    public Pedidos guardarPedidos(Pedidos pedidos){
-        return pedidosJPARepository.save(pedidos);
-    }
-    @Override
-    public ArrayList<Pedido> obtenerPedidos(Cliente cliente){
+    public Pedidos guardarPedidos(Cliente cliente, ArrayList<Pedido> pedidos) {
         return null;
     }
+
+    @Override
+    public Pedidos obtenerPedidosdelCliente(Long id) {
+        return pedidosJPARepository.getOne(id);
+    }
+
+
 
 }
