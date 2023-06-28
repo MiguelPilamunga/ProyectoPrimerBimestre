@@ -73,8 +73,7 @@ public class ClienteAPI {
     ) throws ParseException {
         try {
             if (result.hasErrors()) {
-                model.addAttribute((result.hasErrors()));
-                return "error";
+                return "cliente/formulario";
             }
 
 
