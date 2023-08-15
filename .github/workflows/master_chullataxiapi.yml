@@ -49,5 +49,5 @@ jobs:
         with:
           app-name: 'ChullaTaxiAPI'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_70C57103DBCD49CC96E693C5353FC4B7 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0B0A1FE91C9443BBBEDACAF1F461C2AD }}
           package: '*.war'
